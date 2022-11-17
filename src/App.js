@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect} from "react";
 
 function App() {
+  useEffect(() => {
+    fetch("https://localhost:7286/weatherforecast").then(resp=> resp.json()).then(data => console.log(data))
+  })
   return (
     <div className="App">
       <header className="App-header">
